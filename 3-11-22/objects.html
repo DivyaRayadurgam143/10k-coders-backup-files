@@ -7,7 +7,7 @@
     <title>objects</title>
 </head>
 <body>
-    <script>
+      <script>
         var person = {
             myName : "R.Divya",
             email : "rayadurgamdivya@gamil.com",
@@ -25,6 +25,16 @@
          for(var a in person){
             document.write(a+" : "+ person[a]+"<br>")
          }
+    </script>
+    <script>
+        document.write(person.myname+"<br>" + person.emai +"<br>"+ person.mobile+"<br>")
+        for( a in person){
+        console.log(a)
+        }
+        for( var a in person){
+            document.write(a +"  :  <br>" )
+            document.write(a + " : " + person[a] + "<br>")
+        }
     </script>
  </body>
 </html>
