@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>username</th>
+                <th>password</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var users = [
+        {
+        "id": 5149,
+        "email": "AFrederick@massa.com",
+        "username": "AVelasco",
+        "password": "3mZyv"
+    },
+    {
+        "id": 5150,
+        "email": "GPost@donec.com",
+        "username": "THough",
+        "password": "QOfoT"
+    },
+    {
+        "id": 5151,
+        "email": "WKish@amet.ly",
+        "username": "ATerrill",
+        "password": "r9K7r"
+    },
+    {
+        "id": 5152,
+        "email": "DMcnamee@pulvinar.net",
+        "username": "APalterman",
+        "password": "pz2xw"
+    },
+    {
+        "id": 5153,
+        "email": "ECovel@sed.net",
+        "username": "YTaverna",
+        "password": "MnvKx"
+    },
+    {
+        "id": 5154,
+        "email": "LWhisler@mi.net",
+        "username": "MBerin",
+        "password": "NFenS"
+    },
+    {
+        "id": 5155,
+        "email": "WPsarros@pulvinar.gov",
+        "username": "DWolfgram",
+        "password": "KbYgK"
+    },
+    {
+        "id": 5156,
+        "email": "MReddin@dolor.io",
+        "username": "EWelle",
+        "password": "T1j0G"
+    },
+    {
+        "id": 5157,
+        "email": "AMorrison@nullam.ly",
+        "username": "BSpeth",
+        "password": "3lw95"
+    },
+    {
+        "id": 5158,
+        "email": "TVentura@massa.com",
+        "username": "RTurich",
+        "password": "EOWtM"
+    } 
+        ]
+
+        users.forEach((user) => {
+            var mytr = document.createElement("tr")
+
+            var td1 = document.createElement("td");
+            td1.innerHTML = user.id
+            mytr.appendChild(td1)
+
+            var td2 = document.createElement("td");
+            td2.innerHTML = user.email
+            mytr.appendChild(td2)
+
+            var td3 = document.createElement("td");
+            td3.innerHTML = user.username
+            mytr.appendChild(td3)
+
+
+            var td4 = document.createElement("td");
+            td4.innerHTML = user.password
+            mytr.appendChild(td4)
+
+
+            document.querySelector("tbody").appendChild(mytr)
+        })
+
+</script>
+</body>
+</html>
