@@ -16,6 +16,7 @@
                 <th>UserId</th>
                 <th>Date</th>
                 <th>Products</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -31,8 +32,10 @@
             { "id": 6, "userId": 4, "date": "2020-03-01T00:00:02.000Z", "products": [{ "productId": 10, "quantity": 2 }, { "productId": 12, "quantity": 3 }], "__v": 0 },
             { "id": 7, "userId": 8, "date": "2020-03-01T00:00:02.000Z", "products": [{ "productId": 18, "quantity": 1 }], "__v": 0 }
         ]
+
+
         console.log(cart);
-        cart.forEach((cartItem) => {
+        cart.forEach((cartItem,i) => {
             console.log(cartItem);
             var myTr = document.createElement("tr");
             for (a in cartItem) {
@@ -59,8 +62,46 @@
                     myTr.appendChild(myTd);
                 }
             }
+
+             // delete method  
+
+                // creat one td for the purpose of delete
+                var deleteTd = document.createElement("td");
+                // button created
+                var deleteBtn = document.createElement("button");
+
+                // deletebutton set a new value to an attribute
+                deleteBtn.setAttribute("onclick", " deletedetail(" + i + ")");
+
+                // inside button text
+                deleteBtn.innerHTML = "DELETE";
+
+                // deleteTd is added to deletebutton
+                deleteTd.appendChild(deleteBtn);
+
+
+                //  td should be added to row
+                myTr.appendChild(deleteTd)
+
             document.querySelector("tbody").appendChild(myTr);
         });
+
+
+        function deletecartItem(i) {
+            if (fillteredcart.length == 0) {
+                fillteredcart = cart.filter((cartItem, index) => {
+                    return cartItem.id !== cart[i].id;
+                });
+            } else {
+                fillteredcart = fillteredcart.filter((cartItem, index) => {
+                    return cartItem.id !== fillteredcart[i].id;
+                });
+            }
+
+            displaydetails(fillteredcart);
+        }
+        displaycartItem(cartItem);
+
     </script>
 </body>
 
