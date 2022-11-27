@@ -2,17 +2,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .mydata {
+      float: left;
+    }
+
+    .left {
+      width: 20%;
+    }
+
+    .right {
+      width: 50%;
+    }
+
+    #updateUserBtn {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
-    <button onclick="getDataFromServer()">Get Data</button>
+  <div class="mydata left">
+    <form action="">
+      <label for="id">id :</label>
+      <input type="text" name="" id="id" disabled> <br>
+      <label for="name">Name :</label>
+      <input type="text" name="" id="name"> <br>
+      <label for="username">Username :</label>
+      <input type="text" name="" id="username"> <br>
+      <label for="email">Email :</label>
+      <input type="text" name="" id="email"> <br>
+      <label for="phone">Phone :</label>
+      <input type="text" name="" id="phone"> <br>
+      <label for="website">Website :</label>
+      <input type="text" name="" id="website"> <br>
+      <br>
+      <button id="createUserBtn" type="button" onclick="createUser()" >Create User</button>
+      <button id="updateUserBtn" type="button" onclick="updateUser()">Update User</button>
+    </form>
+  </div>
+  <div class=" mydata right">
     <table border="1">
-        <thead>
-            <tr>
+      <thead>
+        <tr>
           <th>ID</th>
           <th>Name</th>
           <th>Username</th>
@@ -21,32 +57,35 @@
           <th>Website</th>
           <th>EDIT</th>
           <th>DELETE</th>
-                
-            </tr>
-        </thead>
-        <tbody></tbody>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
-    <script>
-        function getDataFromServer() {
-            // console.log("getDataFromServer ");
-            var getdata = new XMLHttpRequest();
-            getdata.onreadystatechange = function () {
-                if (getdata.readyState == 4 && getdata.status == 200) {
-                    users = JSON.parse(getdata.response);
-                    displayUsers(users);
-                    console.log(users);
-                }
-            };
-            var api_url = "https://filltext.com/?rows=5&fname={firstName}&company={business}&pretty=true&phone={phone}"
-            // var api_url = "https://jsonplaceholder.typicode.com/users";
-            getdata.open("GET", lo);
-            getdata.send();
-        }
-        // called function
-        getDataFromServer();
+  </div>
 
-        function displayUsers(users) {
-            // call this function in above 
+  <script>
+  var local_api_url = "http://localhost:3000/users";
+  var users=[]
+    function getDataFromServer() {
+      console.log("getDataFromServer ");
+      var getdata = new XMLHttpRequest();
+      getdata.onreadystatechange = function () {
+        if (getdata.readyState == 4 && getdata.status == 200) {
+           users = JSON.parse(getdata.response);
+          displayUsers(users);
+          console.log(users);
+        }
+      };
+      // var api_url = "https://filltext.com/?rows=5&fname={firstName}&company={business}&pretty=true&phone={phone}"
+      // var api_url = "https://jsonplaceholder.typicode.com/users";
+      getdata.open("GET", local_api_url);
+      getdata.send();
+    }
+    // called function
+    getDataFromServer();
+
+    function displayUsers(users) {
+      // call this function in above 
       document.querySelector("tbody").innerHTML = ""
       users.forEach((user, i) => {
         var myTr = document.createElement("tr");
@@ -57,6 +96,7 @@
             myTr.appendChild(myTd);
           }
         }
+        // the below var is creat a edit button
         var editTd = document.createElement("td");
         var editBtn = document.createElement("button");
         editBtn.innerHTML = "EDIT";
@@ -64,6 +104,7 @@
         editTd.appendChild(editBtn);
         myTr.appendChild(editTd);
 
+        // the below var is creat a delete button
         var deleteTd = document.createElement("td");
         var deleteBtn = document.createElement("button");
         deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
@@ -73,21 +114,87 @@
         document.querySelector("tbody").appendChild(myTr);
       });
     }
+    // the below function is a function of a edit button
+    function editUser(i) {
+      var userToBeEdited = users[i]
+      for (a in userToBeEdited) {
+        if (a !== "company" && a !== "address") {
+          document.getElementById(a).value = userToBeEdited[a]
+        }
+      }
+      swapButtons(true)
+    }
 
-    function editUser() { }
-
+    // the below function is a function of a update button
+    function updateUser() {
+      var newUser = readValuesFromForm();
+      var createUser = new XMLHttpRequest()
+      createUser.onreadystatechange = function () {
+        if (createUser.readyState == 4 && createUser.status == 200) {
+          getDataFromServer()
+        }
+      }
+      createUser.open("PUT", local_api_url + newUser.id)
+      createUser.setRequestHeader("Content-Type", "application/json");
+      createUser.send(JSON.stringify(newUser))
+    }
+    // the below function is a function of a delete button
     function deleteUser(i) {
       var delUser = new XMLHttpRequest();
-      delUser.onreadystatechange = function () {
+      delUser.open("DELETE", local_api_url+"/" + users[i].id)
+      console.log(local_api_url+"/" + users[i].id );
+       delUser.send()
+      delUser.onload = function () {
         if (delUser.readyState == 4 && delUser.status == 200) {
           getDataFromServer();
+          users = JSON.parse(this.response);
+          
+          displayUsers(users);
         }
       };
-      delUser.open("DELETE", local_api_url + users[i].id);
-      delUser.send()
+      //
     }
-          
-    </script>
+
+    // the below is a function of readingvalues
+    function createUser() {
+      var newUser = readValuesFromForm()
+      console.log(newUser)
+      var createUser = new XMLHttpRequest()
+      createUser.onreadystatechange = function () {
+        if (createUser.readyState == 4 && createUser.status == 201) {
+          getDataFromServer()
+        }
+      }
+      createUser.open("POST", local_api_url)
+      createUser.setRequestHeader("Content-Type", "application/json");
+      createUser.send(JSON.stringify(newUser))
+    }
+
+    function readValuesFromForm() {
+      var user = {
+        id: "",
+        name: "",
+        username: "",
+        email: "",
+        phone: "",
+        website: ""
+      }
+      for (a in user) {
+        user[a] = document.getElementById(a).value
+      }
+      return user
+    }
+
+    function swapButtons(val) {
+      if (val) {
+        document.getElementById("createUserBtn").style.display = "none";
+        document.getElementById("updateUserBtn").style.display = "block";
+      } else {
+        document.getElementById("createUserBtn").style.display = "block";
+        document.getElementById("updateUserBtn").style.display = "none";
+      }
+    }
+  </script>
 </body>
 
 </html>

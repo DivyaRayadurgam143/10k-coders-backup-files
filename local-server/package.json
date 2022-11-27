@@ -16,5 +16,8 @@
     "url": "https://github.com/vmurali100/78R-10K-Coders/issues"
   },
   "homepage": "https://github.com/vmurali100/78R-10K-Coders#readme",
+  "dependencies": {
+    "json-server": "^0.17.1"
+  },
   "description": ""
 }
