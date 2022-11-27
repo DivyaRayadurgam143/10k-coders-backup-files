@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "local-server",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: install - local-server",
+			"detail": "install dependencies from package"
+		}
+	]
+}
