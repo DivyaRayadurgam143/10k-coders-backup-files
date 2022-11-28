@@ -15,14 +15,18 @@
             var getInfo= new XMLHttpRequest()
             getInfo.onreadystatechange=function(){
                 if(getInfo.readyState == 4 && getInfo.status ==200){
-                    console.log(JSON .parse(getInfo.response))
-                   
+                    data=JSON.parse(getInfo.response)
+                    displayData()
                 }
             }
             getInfo.open("GET", "https://filltext.com/?rows=10&id=%7Bindex%7D&email=%7Bemail%7D&username=%7Busername%7D&password=%7BrandomString%7C5%7D&pretty=true")
             getInfo.send()
         }
-
+        function displayData(){
+           data.forEach((ele)=>{
+            document.write(ele.email+" " +ele.password+" "+ "<br>")
+           })
+        }
         
     </script>
 </body>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +15,19 @@
             var getInfo= new XMLHttpRequest()
             getInfo.onreadystatechange=function(){
                 if(getInfo.readyState == 4 && getInfo.status ==200){
-                    console.log(JSON .parse(getInfo.response))
-                   
+                    data=JSON.parse(getInfo.response)
+                    displayData()
                 }
             }
-            getInfo.open("GET", "https://jsonplaceholder.typicode.com/comments")
+            getInfo.open("GET","https://jsonplaceholder.typicode.com/comments");
+
             getInfo.send()
         }
-
+        function displayData(){
+           data.forEach((ele)=>{
+            document.write(ele.email+" " +ele.name+" "+ "<br>")
+           })
+        }
         
     </script>
 </body>

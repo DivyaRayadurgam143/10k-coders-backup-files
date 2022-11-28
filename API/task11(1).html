@@ -19,12 +19,13 @@
                     displayData()
                 }
             }
-            getInfo.open("GET","https://fakestoreapi.com/users");
+            getInfo.open("GET","https://jsonplaceholder.typicode.com/users");
+
             getInfo.send()
         }
         function displayData(){
            data.forEach((ele)=>{
-            document.write(ele.email+" " +ele.password+" "+ "<br>")
+            document.write(ele.name+" " +ele.username+" "+ele.email+""+ "<br>")
            })
         }
         

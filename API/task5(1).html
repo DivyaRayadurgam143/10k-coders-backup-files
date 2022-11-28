@@ -15,14 +15,19 @@
             var getInfo= new XMLHttpRequest()
             getInfo.onreadystatechange=function(){
                 if(getInfo.readyState == 4 && getInfo.status ==200){
-                    console.log(JSON .parse(getInfo.response))
-                   
+                    data=JSON.parse(getInfo.response)
+                    displayData()
                 }
             }
-            getInfo.open("GET", " https://fakestoreapi.com/carts")
+            getInfo.open("GET","https://fakestoreapi.com/carts");
             getInfo.send()
         }
-
+        function displayData(){
+           data.forEach((ele)=>{
+            document.write(ele.email+" " +ele.password+" "+ "<br>")
+            console.log(data)
+           })
+        }
         
     </script>
 </body>

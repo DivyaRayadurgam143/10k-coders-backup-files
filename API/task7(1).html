@@ -15,14 +15,18 @@
             var getInfo= new XMLHttpRequest()
             getInfo.onreadystatechange=function(){
                 if(getInfo.readyState == 4 && getInfo.status ==200){
-                    console.log(JSON .parse(getInfo.response))
-                   
+                    data=JSON.parse(getInfo.response)
+                    displayData()
                 }
             }
-            getInfo.open("GET", "https://jsonplaceholder.typicode.com/posts")
+            getInfo.open("GET","https://jsonplaceholder.typicode.com/posts");
             getInfo.send()
         }
-
+        function displayData(){
+           data.forEach((ele)=>{
+            document.write(ele.id+" " +ele.body+" "+ "<br>")
+           })
+        }
         
     </script>
 </body>
