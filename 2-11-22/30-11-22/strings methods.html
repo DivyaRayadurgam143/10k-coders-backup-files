@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myname = "DIVYA ROYAL";
+        var WelcomeMessage ="Hii All Welcome To BTS Concert. in the LAS VEGAS"
+        console.log(WelcomeMessage.length);
+        // converting string into array 
+        console.log(WelcomeMessage.split(" "))
+        console.log(WelcomeMessage.split(" ").join(" "))
+        console.log(WelcomeMessage.split(" ").reverse(" ").join(" "))
+        // to find any object in array
+        console.log(WelcomeMessage.indexOf("BTS"))
+        console.log(WelcomeMessage.lastIndexOf("BTS"))
+        // find dot and in the message 
+        var dotIndex =WelcomeMessage.indexOf(".");
+        console.log(WelcomeMessage.substring(dotIndex+2,dotIndex+17)); 
+        console.log(WelcomeMessage.substr(dotIndex+2,15));
+        console.log(WelcomeMessage.slice(dotIndex+2,dotIndex+19));
+        console.log(WelcomeMessage.replace("BTS","BangtanSonyeondan"));
+        console.log("dotIndex",dotIndex)
+    </script>
+</body>
+</html>
