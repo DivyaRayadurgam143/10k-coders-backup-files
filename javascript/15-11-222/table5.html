@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>UserId</th>
+                <th>Date</th>
+                <th>Products</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <!-- <script src="./data.js"></script> -->
+    <script>
+        var cart = [
+            { "id": 1, "userId": 1, "date": "2020-03-02T00:00:02.000Z", "products": [{ "productId": 1, "quantity": 4 }, { "productId": 2, "quantity": 1 }, { "productId": 3, "quantity": 6 }], "__v": 0 },
+            { "id": 2, "userId": 1, "date": "2020-01-02T00:00:02.000Z", "products": [{ "productId": 2, "quantity": 4 }, { "productId": 1, "quantity": 10 }, { "productId": 5, "quantity": 2 }], "__v": 0 },
+            { "id": 3, "userId": 2, "date": "2020-03-01T00:00:02.000Z", "products": [{ "productId": 1, "quantity": 2 }, { "productId": 9, "quantity": 1 }], "__v": 0 },
+            { "id": 4, "userId": 3, "date": "2020-01-01T00:00:02.000Z", "products": [{ "productId": 1, "quantity": 4 }], "__v": 0 },
+            { "id": 5, "userId": 3, "date": "2020-03-01T00:00:02.000Z", "products": [{ "productId": 7, "quantity": 1 }, { "productId": 8, "quantity": 1 }], "__v": 0 },
+            { "id": 6, "userId": 4, "date": "2020-03-01T00:00:02.000Z", "products": [{ "productId": 10, "quantity": 2 }, { "productId": 12, "quantity": 3 }], "__v": 0 },
+            { "id": 7, "userId": 8, "date": "2020-03-01T00:00:02.000Z", "products": [{ "productId": 18, "quantity": 1 }], "__v": 0 }
+        ]
+
+
+        console.log(cart);
+        cart.forEach((cartItem,i) => {
+            console.log(cartItem);
+            var myTr = document.createElement("tr");
+            for (a in cartItem) {
+                var myTd = document.createElement("td");
+                if (a !== "products" && a !== "__v" && a !== "date") {
+                    myTd.innerHTML = cartItem[a];
+                    myTr.appendChild(myTd);
+                } else if (a == "products") {
+                    var productTable = document.createElement("table");
+                    cartItem[a].forEach((item) => {
+                        console.log(item);
+                        var myProdTr = document.createElement("tr");
+                        for (c in item) {
+                            var ctd = document.createElement("td");
+                            ctd.innerHTML = c + ": " + item[c];
+                            myProdTr.appendChild(ctd);
+                        }
+                        productTable.appendChild(myProdTr);
+                    });
+                    myTd.appendChild(productTable);
+                    myTr.appendChild(myTd);
+                } else if (a == 'date') {
+                    myTd.innerHTML = new Date(cartItem[a]).toDateString();
+                    myTr.appendChild(myTd);
+                }
+            }
+
+             // delete method  
+
+                // creat one td for the purpose of delete
+                var deleteTd = document.createElement("td");
+                // button created
+                var deleteBtn = document.createElement("button");
+
+                // deletebutton set a new value to an attribute
+                deleteBtn.setAttribute("onclick", " deletedetail(" + i + ")");
+
+                // inside button text
+                deleteBtn.innerHTML = "DELETE";
+
+                // deleteTd is added to deletebutton
+                deleteTd.appendChild(deleteBtn);
+
+
+                //  td should be added to row
+                myTr.appendChild(deleteTd)
+
+            document.querySelector("tbody").appendChild(myTr);
+        });
+
+
+        function deletecartItem(i) {
+            if (fillteredcart.length == 0) {
+                fillteredcart = cart.filter((cartItem, index) => {
+                    return cartItem.id !== cart[i].id;
+                });
+            } else {
+                fillteredcart = fillteredcart.filter((cartItem, index) => {
+                    return cartItem.id !== fillteredcart[i].id;
+                });
+            }
+
+            displaydetails(fillteredcart);
+        }
+        displaycartItem(cartItem);
+
+    </script>
+</body>
+
+</html>

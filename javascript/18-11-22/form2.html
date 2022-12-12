@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="person">NAME:
+            <input type="text" name="" id="name"><br><br>
+        </label>
+        <label for="person">USERNAME:
+            <input type="text" name="" id="username"><br><br>
+        </label>
+        <label for="person">EMAIL:
+            <input type="email" name="" id="email"><br><br>
+        </label>
+        <label for="person">PASSWORD:
+            <input type="number" name="" id="number1"><br><br>
+        </label>
+        <label for="person">CONFIRM-PASSWORD:
+            <input type="number" name="" id="number2"><br><br>
+        </label>
+        <label for="person">MESSAGE:
+            <textarea name="enter your mesage" id="personal" cols="40" rows="10">
+            Enter your message
+            </textarea>
+        </label>
+        <br><br>
+  <button type="button" onclick="myperson()">SEND</button>
+</form>
+<script>
+     function myperson(){
+        var  person = {
+         name:document.getElementById("name").value ,
+         username:document.getElementById("username").value ,
+         email:document.getElementById("email").value , 
+         number1:document.getElementById("number1").value , 
+         number2:document.getElementById("number2").value ,
+         personal:document.getElementById("personal").value 
+        }
+        console.log("person",person)
+    }
+
+</script>
+</body>
+
+</html>

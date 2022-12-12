@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var teamIndia = [
+            {
+                name: "Rahul",
+                runs: 51,
+                balls: 35,
+                fours: 3,
+                sixes: 3,
+                sr: 145.71
+            },
+            {
+                name: "Rohit",
+                runs: 15,
+                balls: 13,
+                fours: 2,
+                sixes: 0,
+                sr: 115.38
+            },
+            {
+                name: "kohli",
+                runs: 26,
+                balls: 25,
+                fours: 2,
+                sixes: 0,
+                sr: 104
+            },
+            {
+                name: "Suryakumar",
+                runs: 61,
+                balls: 25,
+                fours: 6,
+                sixes: 4,
+                sr: 244
+            },
+            {
+                name: "Pant",
+                runs: 3,
+                balls: 5,
+                fours: 0,
+                sixes: 0,
+                sr: 60
+            },
+            {
+                name: "Hardik",
+                runs: 18,
+                balls: 18,
+                fours: 2,
+                sixes: 0,
+                sr: 100
+            },
+            {
+                name: "Axar",
+                runs: 0,
+                balls: 0,
+                fours: 0,
+                sixes: 0,
+                sr: 0
+            },
+        ];
+        var totalScore = teamIndia.reduce((initialValue, team) => {
+            if (initialValue.runs) {
+                return initialValue.runs + team.runs
+            } else {
+                return initialValue + team.runs
+            }
+
+        })
+        console.log("Total Runs By All Players:-", totalScore)
+
+
+
+
+        var totalScore = teamIndia.reduce((initialValue, team) => {
+            if (initialValue.fours) {
+                return initialValue.fours + team.fours
+            } else {
+                return initialValue + team.fours
+            }
+
+        })
+        console.log("Total Fours By All Players:-", totalScore)
+
+
+
+        var totalScore = teamIndia.reduce((initialValue, team) => {
+            if (initialValue.sixes) {
+                return initialValue.fours + team.sixes
+            } else {
+                return initialValue + team.sixes
+            }
+
+        })
+        console.log("Total Sixes By All Players:-", totalScore)
+
+
+       var lowestscore = teamIndia.filter((team)=>{
+        return team.runs<=15;
+       });
+       console.log("Lowest Runs Scored Players:-",lowestscore)
+
+
+       var highestscore = teamIndia.filter((team)=>{
+        return team.runs>=20;
+       });
+       console.log("Highest Runs Scored Players:-",highestscore)
+
+       var lowestscore = teamIndia.filter((team)=>{
+        return team.sr<=100;
+       });
+       console.log("Lowest Strike Rate:-",lowestscore)
+
+
+
+       var highestscore = teamIndia.filter((team)=>{
+        return team.sr>100;
+       });
+       console.log("Highest Strike Rate:-",highestscore)
+
+
+    </script>
+</body>
+
+</html>
