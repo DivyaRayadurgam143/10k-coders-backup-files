@@ -1,8 +1,8 @@
 import { Component } from "react"
 
 export default class  Fform extends Component{
-constructor(){
-    super();
+constructor(props){
+    super(props);
     this.state={
         person:{
             name:"",
@@ -32,18 +32,18 @@ constructor(){
         ],
         editIndex: null,    
    }
-}
+};
 handleChange = (e) => {
     var newPerson = { ...this.state.person };
     newPerson[e.target.name] = e.target.value;
     this.setState({ person: newPerson });
-  }
+  };
   adduser = () => {
     var latestUsers = [...this.state.allUsers];
     latestUsers[this.state.editIndex] = this.state.person;
     this.setState({ allUsers: latestUsers, editIndex: null });
     this.clearForm();
-  }
+  };
   clearForm = () => {
     var newForm = {
       name: "",
@@ -54,18 +54,16 @@ handleChange = (e) => {
       message:"",
     };
     this.setState({ person: newForm });
-  }
-
+  };
   editUser = (usr, i) => {
     this.setState({ person: usr, editIndex: i });
-  }
-
+  };
   deleteUser = (usr) => {
     var latestUsers = this.state.allUsers.filter(
       (myUser) => myUser.email !== usr.email
     );
     this.setState({ allUsers: latestUsers });
-  }
+  };
 render() {
     return <div>
         <form>
@@ -102,7 +100,7 @@ render() {
           )
           }  
         </form>
-        <table class="table">
+        <table class="table table-info table-hover">
   <thead>
            <tr>
               <th>NAME</th>
@@ -110,6 +108,7 @@ render() {
               <th>EMAIL</th>
               <th>PASSWORD</th>
               <th>CONFIRM PASWORD</th>
+              <th>MESSAGE</th>
               <th>EDIT</th>
               <th>DELETE</th>
             </tr>
