@@ -22,6 +22,7 @@ import Innerfunctionalcomp from './functioncomponents/function8component';
 import Hisfunctionalcomp from './functioncomponents/function9component';
 
 import VideoFile1 from "./Video2.mp4";
+import Students from "./Classcomponents/class11component";
 
 function App() {
   return (
@@ -50,7 +51,7 @@ function App() {
       <Staclasscomp/>
       <Occclasscomp/>
       <Livclasscomp/>
-
+      <Students/>
     </div>
   );
 }

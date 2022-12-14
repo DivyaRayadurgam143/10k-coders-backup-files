@@ -21,6 +21,9 @@ import Releaseclasscomp from "./Classcomponents/class5component";
 import Rmclasscomp from "./Classcomponents/class6component";
 import Novclasscomp from "./Classcomponents/class7component";
 import Wonclasscomp from "./Classcomponents/class8component";
+import Btscomp from "./Classcomponents/class11component";
+import Student from "./Classcomponents/class12component";
+
 function App() {
   return (
     <div className="App">
@@ -48,12 +51,9 @@ function App() {
       <ParentComponent/>
       <ChildComponent/>
       <MainClassComponent/>
-      
-      
-
-      
-
-
+      <Btscomp/>
+      <Student/>
+   
     </div>
   );
 }

@@ -1,6 +1,8 @@
 
 import './App.css';
 import Livclasscomp from './Classcomponents/class10component';
+import Students from './Classcomponents/class11component';
+
 import Jiminclasscomp from './Classcomponents/class1component';
 import Genclasscomp from './Classcomponents/class2component';
 import Insclasscomp from './Classcomponents/class3component';
@@ -50,6 +52,7 @@ function App() {
     <Staclasscomp/>
     <Occclasscomp/>
     <Livclasscomp/>
+    <Students/>
     </div>
   );
 }

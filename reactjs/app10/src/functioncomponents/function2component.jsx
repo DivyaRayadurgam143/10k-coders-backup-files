@@ -1,8 +1,9 @@
-function Kimfunctionalcomp(){
-    return(
-        <div >
- <h2 class="bts"> Kim Taehyung is also known professionally as V,</h2>
-</div>
-    ) 
+import { Component } from "react";
+
+class Genclasscomp extends Component{
+    render(){
+        return <h2>THANK YOU FOR WATCHING</h2>
+
+    }
 }
-export default Kimfunctionalcomp;
+export default Genclasscomp

@@ -1,6 +1,7 @@
 
 import './App.css';
 import Gkoclasscomp from './Classcomponents/class10component';
+import Students from './Classcomponents/class11component';
 import Junkookclasscomp from './Classcomponents/class1component';
 import Educlasscomp from './Classcomponents/class2component';
 import Patclasscomp from './Classcomponents/class3component';
@@ -50,6 +51,7 @@ function App() {
       <Berclasscomp/>
       <Gulclasscomp/>
       <Gkoclasscomp/>
+      <Students/>
     </div>
   );
 }
