@@ -67,6 +67,8 @@ handleChange = (e) => {
 render() {
     return <div>
         <form>
+          <fieldset>
+          <legend><h2>BOOTSTRAP 4 FORM VALIDATION DEMO</h2></legend>
           <label htmlFor="">NAME:</label>
           <input type="text" name="name"value={this.state.person.name} onChange={(e) => {this.handleChange(e); }}/>{" "}
           <br />
@@ -98,7 +100,8 @@ render() {
           (
             <button type="button" onClick={this.addUser} className="btn btn-primary"> add User </button>
           )
-          }  
+          } ; 
+          </fieldset>
         </form>
         <table class="table table-info table-hover">
   <thead>

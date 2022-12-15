@@ -93,6 +93,7 @@ export default class Tform extends Component{
         return (
         <div>
             <form>
+              <legend><h2>ADDRESS</h2></legend>
           <label htmlFor="">STREET:</label>
           <input  type="text"   name="street"  value={this.state.person.street}  onChange={(e) => {this.handleChange(e);}}/>{" "}
           <br />

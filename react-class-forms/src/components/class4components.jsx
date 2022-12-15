@@ -93,6 +93,7 @@ export default class Foform extends Component{
         return (
         <div>
             <form>
+              <legend><h2>HTML FORM</h2></legend>
           <label htmlFor="">FIRST NAME:</label>
           <input  type="text"   name="firstname"  value={this.state.person.fistname}  onChange={(e) => {this.handleChange(e);}}/>{" "}
           <br />

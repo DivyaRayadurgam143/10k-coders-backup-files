@@ -100,6 +100,7 @@ export default class Fiform extends Component{
         return (
         <div>
             <form>
+              <lagend><h2>PINA LOVE.COM</h2></lagend>
           <label htmlFor="">USER NAME:</label>
           <input  type="text"  placeholder="Enter your username" name="username"  value={this.state.person.username}  onChange={(e) => {this.handleChange(e);}}/>{" "}
           <br />
@@ -151,7 +152,7 @@ export default class Fiform extends Component{
           )
           }  
             </form>
-            <table class="table table-hover table-primary">
+            <table class="table table-hover table-secondary">
             <thead>
             <tr>
               <th>USERNAME</th>

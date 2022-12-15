@@ -107,8 +107,9 @@ export default class Sform extends Component {
   };
   render() {
     return <div>
-        <form>
-          <legend>REGISTRATION DETAILS</legend>
+       <form>
+       <fieldset>
+          <legend><h2>REGISTRATION DETAILS</h2></legend>
           <label htmlFor="">UNIVERSITY:</label>
           <input  type="text" placeholder="university"  name="university"  value={this.state.person.university}  onChange={(e) => {this.handleChange(e);}}/>{" "}
           <br />
@@ -140,36 +141,15 @@ export default class Sform extends Component {
           <br />
           <br />
           <label htmlFor="">AVERAGE CPI:</label>
-          <input
-            type="text"
-            name="averagecpi"
-            value={this.state.person.averagecpi}
-            onChange={(e) => {
-              this.handleChange(e);
-            }}
-          />{" "}
+          <input  type="number" name="averagecpi" value={this.state.person.averagecpi} onChange={(e) => {this.handleChange(e);}} />{" "}
           <br />
           <br />
           <label htmlFor="">EXPERIENCE:</label>
-          <input
-            type="text"
-            name="expeience"
-            value={this.state.person.experience}
-            onChange={(e) => {
-              this.handleChange(e);
-            }}
-          />{" "}
+          <input type="number" name="expeience" value={this.state.person.experience}onChange={(e) => { this.handleChange(e); }}/>{" "}
           <br />
           <br />
           <label htmlFor="">WEBSITE:</label>
-          <input
-            type="text"
-            name="website"
-            value={this.state.person.website}
-            onChange={(e) => {
-              this.handleChange(e);
-            }}
-          />{" "}
+          <input type="url" name="website" value={this.state.person.website} onChange={(e) => {this.handleChange(e); }}/>{" "}
           <br />
           <br />
           {this.state.editIndex !== null ? 
@@ -180,6 +160,7 @@ export default class Sform extends Component {
             <button type="button" onClick={this.addUser} className="btn btn-primary"> add User </button>
           )
           }  
+        </fieldset>
         </form>
         <table class="table table-dark table-hover">
           <thead>
