@@ -1,0 +1,210 @@
+{
+  "allUsers": [
+    {
+      "id": 1,
+      "name": "Kim Taehyung",
+      "username": "taehyung",
+      "email": "v@gmail.com",
+      "password": "9876543",
+      "confirmpassword": "98765432",
+      "message": "hii my name is v"
+    },
+    {
+      "id": 2,
+      "name": "Kim namjoon",
+      "username": "rm",
+      "email": "rm@gmail.com",
+      "password": "1234567",
+      "confirmpassword": "1234567",
+      "message": "hii iam leader of the bts"
+    },
+    {
+      "id": 3,
+      "name": "Kim namjoon",
+      "username": "rm",
+      "email": "rm@gmail.com",
+      "password": "1234567",
+      "confirmpassword": "1234567",
+      "message": "hii iam leader of the bts"
+    }
+  ],
+  "allUsers1": [
+    {
+      "id": 2,
+      "university": "Sri Venkateswara University",
+      "institute": "Indian Institute of Technology (IIT)",
+      "branch": "Electrical & Electronics Engineering",
+      "degree": "BACHELOR OF TECHNOLOGY",
+      "graduated": "completed",
+      "averagecpi": "83.5",
+      "experience": "1",
+      "website": "https://www.bing.com/search?q=google&form=ANNTH1&refig=37e5a40db306455c91196228fb3c89df"
+    },
+    {
+      "id": 3,
+      "university": "K L University",
+      "institute": "National Institute of Technology (NIT) ",
+      "branch": "Electrical & Electronics Engineering",
+      "degree": "BACHELOR OF TECHNOLOGY",
+      "graduated": "pursuing",
+      "averagecpi": "92.1",
+      "experience": "0",
+      "website": "https://www.bing.com/search?q=google&form=ANNTH1&refig=37e5a40db306455c91196228fb3c89df"
+    },
+    {
+      "id": 4,
+      "university": "Acharya Nagarjuna University",
+      "institute": " National Institute of Ocean Technology (ESSO-NIOT)",
+      "branch": "Civil Engineering",
+      "degree": "BACHELOR OF TECHNOLOGY",
+      "graduated": "completed",
+      "averagecpi": "74.6",
+      "experience": "0",
+      "website": "https://www.bing.com/search?q=google&form=ANNTH1&refig=37e5a40db306455c91196228fb3c89df"
+    },
+    {
+      "id": 5,
+      "university": "Sri Krishnadevaraya University",
+      "institute": "Indian Institute of Information Technology ",
+      "branch": "Biotechnology Engineering",
+      "degree": "BACHELOR OF SCIENCE",
+      "graduated": "completed",
+      "averagecpi": "95-2",
+      "experience": "0",
+      "website": "https://www.bing.com/search?q=google&form=ANNTH1&refig=37e5a40db306455c91196228fb3c89df"
+    },
+    {
+      "id": 6,
+      "university": "",
+      "institute": "",
+      "branch": "",
+      "graduated": "",
+      "averagecpi": "",
+      "experience": "",
+      "website": ""
+    }
+  ],
+  "allUsers2": [
+    {
+      "id": 1,
+      "street": "Baegyang-daero",
+      "city": "busan",
+      "state": "Buk-gu",
+      "zipcode": "c",
+      "country": "South Korea"
+    },
+    {
+      "id": 2,
+      "street": "Deokcheon-ro",
+      "city": "busan",
+      "state": "Buk-gu",
+      "zipcode": "46575",
+      "country": "South Korea"
+    },
+    {
+      "id": 3,
+      "street": "Myeongdong Shopping Street",
+      "city": "seoul",
+      "state": "Buk-gu",
+      "zipcode": "76575",
+      "country": "South Korea"
+    },
+    {
+      "id": 4,
+      "street": "Ikseondong Culture Street",
+      "city": "seoul",
+      "state": "Buk-gu",
+      "zipcode": "76575",
+      "country": "South Korea"
+    },
+    {
+      "id": 5,
+      "street": "Namdaemun Market Street",
+      "city": "seoul",
+      "state": "Buk-gu",
+      "zipcode": "76567",
+      "country": "South Korea"
+    }
+  ],
+  "allUsers3": [
+    {
+      "id": 2,
+      "fistname": "kim",
+      "lastname": "Taehyung",
+      "dateofbirth": "30-12-1995",
+      "emailid": "v@gmail.com",
+      "mobilenumber": "9867531465"
+    },
+    {
+      "id": 3,
+      "fistname": "Park",
+      "lastname": "Jimin",
+      "dateofbirth": "13-10-1995",
+      "emailid": "jimin@gmail.com",
+      "mobilenumber": "9637823156"
+    },
+    {
+      "id": 4,
+      "fistname": "kim",
+      "lastname": "namjoon",
+      "dateofbirth": "12-9-1994",
+      "emailid": "rm@gmail.com",
+      "mobilenumber": "78435610963"
+    },
+    {
+      "id": 5,
+      "fistname": "Kim",
+      "lastname": "Seokjin",
+      "dateofbirth": "04-12-1992",
+      "emailid": "jin@gmail.com",
+      "mobilenumber": "9237102739"
+    }
+  ],
+  "allUsers4": [
+    {
+      "id": 1,
+      "username": "",
+      "password": "",
+      "emailaddress": "",
+      "dateofbirth": "",
+      "height": "",
+      "weight": ""
+    },
+    {
+      "id": 2,
+      "username": "",
+      "password": "",
+      "emailaddress": "",
+      "dateofbirth": "",
+      "height": "",
+      "weight": ""
+    },
+    {
+      "id": 3,
+      "username": "",
+      "password": "",
+      "emailaddress": "",
+      "dateofbirth": "",
+      "height": "",
+      "weight": ""
+    },
+    {
+      "id": 4,
+      "username": "",
+      "password": "",
+      "emailaddress": "",
+      "dateofbirth": "",
+      "height": "",
+      "weight": ""
+    },
+    {
+      "id": 5,
+      "username": "",
+      "password": "",
+      "emailaddress": "",
+      "dateofbirth": "",
+      "height": "",
+      "weight": ""
+    }
+  ]
+}

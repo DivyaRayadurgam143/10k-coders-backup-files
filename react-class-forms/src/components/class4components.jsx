@@ -1,99 +1,125 @@
 import { Component } from "react";
-
+import axios from 'axios'
 export default class Foform extends Component{
     constructor(props){
         super(props);
         this.state={
               person:{
+                id:"",
                fistname:"",
                lastname:"",
                dateofbirth:"",
                emailid:"",
-               mobilenumber:""
+               mobilenumber:"",
               },
-              allUsers: [
-                {
-                    fistname:"Jeon",
-                    lastname:"Jungkook",
-                    dateofbirth:"01-9-1997",
-                    emailid:"jk@gmail.com",
-                    mobilenumber:"9876543212"
-                },
-                {
-                    fistname:"kim",
-                    lastname:"Taehyung",
-                    dateofbirth:"30-12-1995",
-                    emailid:"v@gmail.com",
-                    mobilenumber:"9867531465"
-                },
-                {
-                    fistname:"Park",
-                    lastname:"Jimin",
-                    dateofbirth:"13-10-1995",
-                    emailid:"jimin@gmail.com",
-                    mobilenumber:"9637823156"
-                },
-                {
-                    fistname:"kim",
-                    lastname:"namjoon",
-                    dateofbirth:"12-9-1994",
-                    emailid:"rm@gmail.com",
-                    mobilenumber:"78435610963"
-                },
-                {
-                    fistname:"Kim",
-                    lastname:"Seokjin",
-                    dateofbirth:"04-12-1992",
-                    emailid:"jin@gmail.com",
-                    mobilenumber:"9237102739"
-                }
+               allUsers: [
+              //   {
+              //       fistname:"Jeon",
+              //       lastname:"Jungkook",
+              //       dateofbirth:"01-9-1997",
+              //       emailid:"jk@gmail.com",
+              //       mobilenumber:"9876543212"
+              //   },
+              //   {
+              //       fistname:"kim",
+              //       lastname:"Taehyung",
+              //       dateofbirth:"30-12-1995",
+              //       emailid:"v@gmail.com",
+              //       mobilenumber:"9867531465"
+              //   },
+              //   {
+              //       fistname:"Park",
+              //       lastname:"Jimin",
+              //       dateofbirth:"13-10-1995",
+              //       emailid:"jimin@gmail.com",
+              //       mobilenumber:"9637823156"
+              //   },
+              //   {
+              //       fistname:"kim",
+              //       lastname:"namjoon",
+              //       dateofbirth:"12-9-1994",
+              //       emailid:"rm@gmail.com",
+              //       mobilenumber:"78435610963"
+              //   },
+              //   {
+              //       fistname:"Kim",
+              //       lastname:"Seokjin",
+              //       dateofbirth:"04-12-1992",
+              //       emailid:"jin@gmail.com",
+              //       mobilenumber:"9237102739"
+              //   }
               ],
               editIndex: null,
             
-        }
-    };
-    handleChange = (e) => {
-        var newPerson = { ...this.state.person };
-        newPerson[e.target.name] = e.target.value;
-        this.setState({ person: newPerson });
-      };
-      addUser = () => {
-        console.log(this.state.person);
-        var newAllUsers = [...this.state.allUsers];
-        newAllUsers.push(this.state.person);
-        this.setState({ allUsers: newAllUsers });
-        this.clearForm();
-      };
-      clearForm = () => {
-        var newForm = {
-            fistname:"",
-            lastname:"",
-            dateofbirth:"",
-            emailid:"",
-            mobilenumber:""
         };
-        this.setState({ person: newForm });
+    }
+    handleChange = (e) => {
+      var newPerson = { ...this.state.person };
+      newPerson[e.target.name] = e.target.value;
+      this.setState({ person: newPerson });
+    };
+    addUser = () => {
+      axios({
+        method:"post",
+        url:"http://localhost:3002/allUsers3/",
+        data:this.state.person,
+        headers:{'content-type':'application/json'}
+    
+      })
+      console.log(this.state.person);
+      var newAllUsers = [...this.state.allUsers];
+      newAllUsers.push(this.state.person);
+      this.setState({ allUsers: newAllUsers });
+      this.clearForm();
+    };
+    clearForm = () => {
+      var newForm = {
+        id:"",
+        fistname:"",
+        lastname:"",
+        dateofbirth:"",
+        emailid:"",
+        mobilenumber:"",
       };
-      editUser = (usr, i) => {
-        this.setState({ person: usr, editIndex: i });
-      };
-      deleteUser = (usr) => {
-        var latestUsers = this.state.allUsers.filter(
-          (myUser) => myUser.email !== usr.email
-        );
-        this.setState({ allUsers: latestUsers });
-      };
-      updateUser = () => {
-        var latestUsers = [...this.state.allUsers];
-        latestUsers[this.state.editIndex] = this.state.person;
-        this.setState({allUsers:latestUsers,editIndex:null});
-        this.clearForm()
-      };
+      this.setState({ person: newForm });
+    };
+  
+    editUser = (usr, i) => {
+      this.setState({ person: usr, editIndex: i });
+    };
+  
+    deleteUser = (usr,id) => {
+      console.log(usr,id)
+      var number=id+1;
+      axios.delete("http://localhost:3002/allUsers3/"+number).then((res)=> this.componentDidMount())
+    
+      // var latestUsers = this.state.allUsers.filter(
+      //   (myUser) => myUser.emailid !== usr.emailid
+      // );
+      // this.setState({ allUsers: latestUsers });
+    };
+  
+    updateUser = () => {
+      var number = this.state.editIndex+1;
+    axios({
+      method:"put",
+      url:"http://localhost:3002/allUsers3/"+number,
+      data:this.state.user
+    })
+      var latestUsers = [...this.state.allUsers];
+      latestUsers[this.state.editIndex] = this.state.person;
+      this.setState({allUsers:latestUsers,editIndex:null});
+      this.clearForm()
+    };
     render(){
         return (
         <div>
             <form>
-              <legend><h2>HTML FORM</h2></legend>
+              <h2>HTML FORM</h2>
+              <label htmlFor="">ID:</label>
+          <input  type="number" placeholder="id"  name="id"  value={this.state.person.id}  onChange={(e) => {this.handleChange(e);}} disabled/>{" "}
+          <br />
+          <br />
           <label htmlFor="">FIRST NAME:</label>
           <input  type="text"   name="firstname"  value={this.state.person.fistname}  onChange={(e) => {this.handleChange(e);}}/>{" "}
           <br />
@@ -123,9 +149,10 @@ export default class Foform extends Component{
           )
           }  
             </form>
-            <table class="table table-hover table-primary">
+            <table className="table table-hover table-primary">
             <thead>
             <tr>
+              <th>ID</th>
               <th>FIRST NAME</th>
               <th>LAST NAME</th>
               <th>DATE OF BIRTH</th>
@@ -138,6 +165,7 @@ export default class Foform extends Component{
           <tbody>
             {this.state.allUsers.map((usr, i) => (
               <tr key={i}>
+                <td>{usr.id}</td>
                 <td>{usr.fistname}</td>
                 <td>{usr.lastname}</td>
                 <td>{usr.dateofbirth}</td>
@@ -147,7 +175,7 @@ export default class Foform extends Component{
                   <button className="btn btn-warning" onClick={() => {this.editUser(usr, i);}}> Edit </button>{" "}
                 </td>
                 <td>
-                <button  className="btn btn-danger" onClick={() => {  this.deleteUser(usr); }}> Delete </button>{" "}
+                <button  className="btn btn-danger" onClick={() => {this.deleteUser(usr,i);}}> Delete </button>{" "}
                 </td>
               </tr>
             ))}
@@ -155,5 +183,10 @@ export default class Foform extends Component{
         </table>
         </div>
         )
+    }
+    async componentDidMount  () {
+      let response =await axios.get("http://localhost:3002/allUsers3/")
+  console.log(response)
+  this.setState({ allUsers:response.data})
     }
 }

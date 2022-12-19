@@ -2,53 +2,58 @@
   "users": [
     {
       "id": 1,
-      "name": "park jimin",
-      "username": "jimin",
-      "email": "",
-      "address": {},
-      "phone": "",
-      "website": "",
-      "company": {}
+      "university": "Sri Venkateswara University",
+      "institute": " Indian Institute of Science Education & Research (IISER)",
+      "branch": "Computer Science and Engineering",
+      "degree": "BACHELOR OF TECHNOLOGY",
+      "graduated": "completed",
+      "averagecpi": "89.2",
+      "experience": "0",
+      "website": "https://www.bing.com/search?q=google&form=ANNTH1&refig=37e5a40db306455c91196228fb3c89df"
     },
     {
       "id": 2,
-      "name": "kim taehyung",
-      "username": "v",
-      "email": "",
-      "address": {},
-      "phone": "",
-      "website": "",
-      "company": {}
+      "university": "Sri Venkateswara University",
+      "institute": "Indian Institute of Technology (IIT)",
+      "branch": "Electrical & Electronics Engineering",
+      "degree": "BACHELOR OF TECHNOLOGY",
+      "graduated": "completed",
+      "averagecpi": "83.5",
+      "experience": "1",
+      "website": "https://www.bing.com/search?q=google&form=ANNTH1&refig=37e5a40db306455c91196228fb3c89df"
     },
     {
       "id": 3,
-      "name": "jeon jungkook",
-      "username": "jungkook",
-      "email": "",
-      "address": {},
-      "phone": "",
-      "website": "",
-      "company": {}
+      "university": "K L University",
+      "institute": "National Institute of Technology (NIT) ",
+      "branch": "Electrical & Electronics Engineering",
+      "degree": "BACHELOR OF TECHNOLOGY",
+      "graduated": "pursuing",
+      "averagecpi": "92.1",
+      "experience": "0",
+      "website": "https://www.bing.com/search?q=google&form=ANNTH1&refig=37e5a40db306455c91196228fb3c89df"
     },
     {
       "id": 4,
-      "name": "kim namjoon",
-      "username": "Rap Monster",
-      "email": "",
-      "address": {},
-      "phone": "",
-      "website": "",
-      "company": {}
+      "university": "Acharya Nagarjuna University",
+      "institute": " National Institute of Ocean Technology (ESSO-NIOT)",
+      "branch": "Civil Engineering",
+      "degree": "BACHELOR OF TECHNOLOGY",
+      "graduated": "completed",
+      "averagecpi": "74.6",
+      "experience": "0",
+      "website": "https://www.bing.com/search?q=google&form=ANNTH1&refig=37e5a40db306455c91196228fb3c89df"
     },
     {
       "id": 5,
-      "name": "jung Hoseok",
-      "username": "j-hope",
-      "email": "",
-      "address": {},
-      "phone": "",
-      "website": "",
-      "company": {}
+      "university": "Sri Krishnadevaraya University",
+      "institute": "Indian Institute of Information Technology ",
+      "branch": "Biotechnology Engineering",
+      "degree": "BACHELOR OF SCIENCE",
+      "graduated": "completed",
+      "averagecpi": "95-2",
+      "experience": "0",
+      "website": "https://www.bing.com/search?q=google&form=ANNTH1&refig=37e5a40db306455c91196228fb3c89df"
     }
   ],
   "users1": [
