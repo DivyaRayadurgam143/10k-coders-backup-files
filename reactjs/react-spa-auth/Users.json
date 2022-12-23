@@ -1,0 +1,58 @@
+{
+    "users1": [
+        {
+          "id": 33,
+          "email": "KWells@eros.net",
+          "username": "JEntinger",
+          "password": "4Jg67"
+        },
+        {
+          "id": 34,
+          "email": "CAresti@amet.org",
+          "username": "MLooper",
+          "password": "VOMiI"
+        },
+        {
+          "id": 35,
+          "email": "MJoslin@lacus.ly",
+          "username": "JWelte",
+          "password": "KnDfT"
+        },
+        {
+          "id": 36,
+          "email": "TSchwier@velit.net",
+          "username": "RClare",
+          "password": "9pSke"
+        },
+        {
+          "id": 37,
+          "username": "MLeblanc",
+          "email": "rayadurgamdivya379@gmail.com",
+          "password": "H5iRz"
+        },
+        {
+          "id": 38,
+          "email": "KHanks@magna.gov",
+          "username": "MCann",
+          "password": "ZUHXm"
+        },
+        {
+          "id": 39,
+          "email": "CEseltine@sit.org",
+          "username": "SOrtiz",
+          "password": "9d4FE"
+        },
+        {
+          "id": 40,
+          "email": "VRoss@sollicitudin.ly",
+          "username": "ZMills",
+          "password": "lrMHG"
+        },
+        {
+          "id": 41,
+          "email": "RGulotta@molestie.io",
+          "username": "JReinhardt",
+          "password": "cAtv8"
+        }
+      ]
+}
