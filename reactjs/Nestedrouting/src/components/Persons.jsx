@@ -14,6 +14,7 @@ const Persons = () => {
       await fetch("http://localhost:3201/Users")
     ).json();
     setPersons(response)
+    
   };
 
   return <div>

@@ -1,15 +1,17 @@
 import React from 'react'
+import { useNavigate,} from "react-router-dom";
 
 const Person = ({prsnpbs}) => {
     // console.log(prsnpbs)
-
+    const navigate = useNavigate();
     const handleDelete =(prsnpbs)=>{
          console.log(prsnpbs)
+         navigate('/delete/'+prsnpbs.id)
     }
 
   return (
     <tr>
-    <td>{prsnpbs.id}</td>
+      <td>{prsnpbs.id}</td>
     <td>{prsnpbs.name}</td>
     <td>{prsnpbs.username}</td>
     <td>{prsnpbs.email}</td>
