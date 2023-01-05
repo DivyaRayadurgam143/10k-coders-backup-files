@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addPersonAction } from "../store/Actions";
+import { addPersonAction } from "./store/Actions";
 import PersonsTable from "./PersonsTable";
 
 class Person extends Component {
