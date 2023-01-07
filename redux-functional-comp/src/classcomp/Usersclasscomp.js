@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addUseraction, deleteUseraction } from "../actions/Useractions";
+import { addUseraction, deleteUseraction, updateUseraction } from "../actions/Useractions";
 class Usersclasscomp extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +39,8 @@ class Usersclasscomp extends Component {
     this.setState({ user,isEdit:true });
   };
   handleUpdate = (user) =>{
-
+      this.props.deleteUser(this.state.user);
+      this.clearForm()
   }
   render() {
     const { fname, lname, email, password } = this.state.user;
@@ -47,6 +48,7 @@ class Usersclasscomp extends Component {
     // console.log(this.props);
     return (
       <div>
+
         <form>
             <label htmlFor="fname" className="form-label">
               First Name :
@@ -104,7 +106,11 @@ class Usersclasscomp extends Component {
         {this.state.isEdit ?  <button  type="button" onClick={this.handleUpdate}> Update User</button>: <button
            type="button" onClick={this.handlesubmit}>   Add User </button> }
         </form>
+    
+
+      
         <table>
+
           <thead>
             <tr>
               <th>First Name</th>
@@ -115,23 +121,21 @@ class Usersclasscomp extends Component {
               <th>DELETE</th>
             </tr>
           </thead>
+
       <tbody>
-            {users.map((user, i) => (
-              <tr key={i}>
+        {users.map((user, i) => (
+               <tr key={i}>
                 <td>{user.fname}</td>
                 <td>{user.lname}</td>
                 <td>{user.email}</td>
                 <td>{user.password}</td>
-                <td>
-                  <button type="button"
+                <td> <button type="button"
                     onClick={() => {
                       this.handleEdit(user);
                     }}
                   >
                     EDIT
-                  </button>
-                
-                </td>
+                  </button></td>
                 <td>
                   <button type="button"
                     onClick={() => {
@@ -142,11 +146,12 @@ class Usersclasscomp extends Component {
                   </button>
                 </td>
               </tr>
-            ))}
+            ))};
       </tbody>
+
         </table>
       </div>
-    );
+    )
   }
 }
 
@@ -161,6 +166,7 @@ function MapDispatchToProps(dispatch) {
   return {
     addUser: (user) => dispatch(addUseraction(user)),
     deleteUser: (user) => dispatch(deleteUseraction(user)),
+    updateUser:(user) =>dispatch(updateUseraction(user),)
   };
 }
 export default connect(MapStateToProps, MapDispatchToProps)(Usersclasscomp);
